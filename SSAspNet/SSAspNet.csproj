@@ -152,6 +152,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActualOrDoneOrders.cs" />
+    <Compile Include="Models\BusCarCondition.cs" />
+    <Compile Include="Models\BusCarService.cs" />
+    <Compile Include="Models\CarCondition.cs" />
+    <Compile Include="Models\CarService.cs" />
+    <Compile Include="Models\ContextInitializer.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\PasCarCondition.cs" />
+    <Compile Include="Models\PasCarService.cs" />
+    <Compile Include="Models\Price.cs" />
+    <Compile Include="Models\SSWPFContext.cs" />
+    <Compile Include="Models\TruckCarCondition.cs" />
+    <Compile Include="Models\TruckCarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -196,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
