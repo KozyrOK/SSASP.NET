@@ -162,16 +162,22 @@
     <Compile Include="Models\PasCarCondition.cs" />
     <Compile Include="Models\PasCarService.cs" />
     <Compile Include="Models\Price.cs" />
-    <Compile Include="Models\SSWPFContext.cs" />
+    <Compile Include="Models\SSASPContext.cs" />
     <Compile Include="Models\TruckCarCondition.cs" />
     <Compile Include="Models\TruckCarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Actual_orders.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Done_orders.png" />
+    <Content Include="Content\edit.png" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\logo2.png" />
+    <Content Include="Content\New_order.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -203,9 +209,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Main\MainControllerMethod.cshtml" />
+    <Content Include="Views\Main\MainInfoMethod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

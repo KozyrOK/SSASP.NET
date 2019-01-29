@@ -6,25 +6,16 @@ using System.Web.Mvc;
 
 namespace SSAspNet.Controllers
 {
-    public class HomeController : Controller
+    public class MainController : Controller
     {
-        public ActionResult Index()
+        public ActionResult MainControllerMethod()
         {
-            return View();
+            return View("~/Views/Main/MainControllerMethod.cshtml");
         }
 
-        public ActionResult About()
+        public ActionResult MainInfoMethod()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View("~/Views/Main/MainInfoMethod.cshtml");
         }
     }
 }

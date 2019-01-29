@@ -40,3 +40,31 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
+@*<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service station</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <img src="~/Content/logo.png" alt="Logo" class="logo" />
+    </header>
+    <div class="sidenav">
+        <button type="button" class="buttonSidenavMainManu" onclick="location.href='@Url.Action("MainControllerMethod", "MainController")'">Main menu</button>
+        <button type="button" class="buttonPricelist" onclick="location.href='@Url.Action("MainPricelistMethod", "PricelistController")'">Pricelist</button>
+        <button type="button" class="buttonInfo" onclick="location.href='@Url.Action("MainInfoMethod", "MainController")'">Info</button>
+    </div>
+    @RenderBody()
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Ibexsoft</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@

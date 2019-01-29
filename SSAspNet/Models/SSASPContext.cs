@@ -2,9 +2,9 @@
 
 namespace SSWPF.Model
 {
-    class SSWPFContext : DbContext
+    class SSASPContext : DbContext
     {
-        static SSWPFContext() { Database.SetInitializer<SSWPFContext>(new ContextInitializer()); }
+        static SSASPContext() { Database.SetInitializer<SSASPContext>(new ContextInitializer()); }
 
         public DbSet<Order> Orders { get; set; }
         public DbSet<Price> Prices { get; set; }
