@@ -1,0 +1,77 @@
+﻿
+@model SSAspNet.Model.Price
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<page class="Page">
+    <h2 align="center">Pricelist edit</h2>
+
+    @using (Html.BeginForm("MainPricelistEdit", "MainController", FormMethod.Post))
+    {
+    <table class="tablePricelist" align="center">
+        <tr>
+            <th>Service</th>
+            <th>Cost</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Car body</td>
+            <td>@Html.TextBoxFor(m => m.CarBody)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Car Wheels</td>
+            <td>@Html.TextBoxFor(m => m.CarWheels)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Car Engine</td>
+            <td>@Html.TextBoxFor(m => m.CarEngine)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Car Brakes</td>
+            <td>@Html.TextBoxFor(m => m.CarBrakes)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Car Undercarriage</td>
+            <td>@Html.TextBoxFor(m => m.CarUndercarriage)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Bus Salon</td>
+            <td>@Html.TextBoxFor(m => m.BusSalon)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Bus Handsrails</td>
+            <td>@Html.TextBoxFor(m => m.BusHandsrails)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Bus Upholstery</td>
+            <td>@Html.TextBoxFor(m => m.BusUpholstery)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>Wheel Balancing</td>
+            <td>@Html.TextBoxFor(m => m.PasCarwheelBalancing)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td>TruckHydraulics</td>
+            <td>@Html.TextBoxFor(m => m.TruckHydraulics)</td>
+            <td>$</td>
+        </tr>
+        <tr>
+            <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
+            <td><input type="submit" class="buttonOK" value="Save"/></td>
+        </tr>
+    </table>
+    }
+</page>
+
+

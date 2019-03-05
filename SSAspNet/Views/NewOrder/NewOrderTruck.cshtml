@@ -1,0 +1,142 @@
+﻿@model SSAspNet.Model.TruckCarServiceStation
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<page class="Page">
+    <h2 align="center">New Order</h2>
+    <h3 align="center">Truck</h3>
+
+    @using (Html.BeginForm("NewOrderTruck", "NewOrderController", FormMethod.Post))
+    {
+        <table class="tableSS" align="center">
+
+            <tr>
+                <td>Car Model</td>
+                <td>@Html.TextBoxFor(m => m.ModelCar)</td>
+            </tr>
+            <tr>
+                <td>Car Number</td>
+                <td>@Html.TextBoxFor(m => m.NumberCar)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><span>Parameter selection:</span></td>
+                <td><span>Detail condition:</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Car Body</td>
+                <td align="center">@Html.CheckBoxFor(m => m.CarBodyIsService, false)</td>
+                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBodySlider"></td>
+                <td>Value: <span id="CarBodyValue"></span></td>
+                @Html.HiddenFor(m => m.CarBodyCondition, "CarBodySlider")
+            </tr>
+            <tr>
+                <td>Car Wheels</td>
+                <td align="center">@Html.CheckBoxFor(m => m.CarWheelsIsService, false)</td>
+                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarWheelsSlider"></td>
+                <td>Value: <span id="CarWheelsValue"></span></td>
+                @Html.HiddenFor(m => m.CarBodyCondition, "CarWheelsSlider")
+            </tr>
+            <tr>
+                <td>Car Engine</td>
+                <td align="center">@Html.CheckBoxFor(m => m.CarEngineIsService, false)</td>
+                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarEngineSlider"></td>
+                <td>Value: <span id="CarEngineValue"></span></td>
+                @Html.HiddenFor(m => m.CarBodyCondition, "CarEngineSlider")
+            </tr>
+            <tr>
+                <td>Car Brakes</td>
+                <td align="center">@Html.CheckBoxFor(m => m.CarBrakesIsService, false)</td>
+                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBrakesSlider"></td>
+                <td>Value: <span id="CarBrakesValue"></span></td>
+                @Html.HiddenFor(m => m.CarBodyCondition, "CarBrakesSlider")
+            </tr>
+            <tr>
+                <td>Car Undercarriage</td>
+                <td align="center">@Html.CheckBoxFor(m => m.CarUndercarriageIsService, false)</td>
+                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarUndercarriageSlider"></td>
+                <td>Value: <span id="CarUndercarriageValue"></span></td>
+                @Html.HiddenFor(m => m.CarBodyCondition, "CarUndercarriageSlider")
+            </tr>
+            <tr>
+                <td>Truck Hydraulics</td>
+                <td align="center">@Html.CheckBoxFor(m => m.TruckHydraulicsIsService, false)</td>
+                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="TruckHydraulicsSlider"></td>
+                <td>Value: <span id="TruckHydraulicsValue"></span></td>
+                @Html.HiddenFor(m => m.TruckHydraulicsCondition, "TruckHydraulicsSlider")
+            </tr>
+            
+            <tr>
+                <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
+                <td></td>
+                <td><input type="submit" class="buttonOK" value="Save" /></td>
+            </tr>
+        </table>
+    }
+</page>
+
+<script>
+
+    //Car Body
+    var sliderCarBody = document.getElementById("CarBodySlider");
+    var outputCarBody = document.getElementById("CarBodyValue");
+    outputCarBody.innerHTML = sliderCarBody.value;
+
+    sliderCarBody.oninput = function () {
+        outputCarBody.innerHTML = this.value;
+        $('#CarBodySlider').val(sliderCarBody);
+    }
+
+    //Car Wheels
+    var sliderCarWheels = document.getElementById("CarWheelsSlider");
+    var outputCarWheels = document.getElementById("CarWheelsValue");
+    outputCarWheels.innerHTML = sliderCarWheels.value;
+
+    sliderCarWheels.oninput = function () {
+        outputCarWheels.innerHTML = this.value;
+        $('#CarWheelsSlider').val(sliderCarWheels);
+    }
+
+    //Car Engine
+    var sliderCarEngine = document.getElementById("CarEngineSlider");
+    var outputCarEngine = document.getElementById("CarEngineValue");
+    outputCarEngine.innerHTML = sliderCarEngine.value;
+
+    sliderCarEngine.oninput = function () {
+        outputCarEngine.innerHTML = this.value;
+        $('#CarEngineSlider').val(sliderCarEngine);
+    }
+
+    //Car Brakes
+    var sliderCarBrakes = document.getElementById("CarBrakesSlider");
+    var outputCarBrakes = document.getElementById("CarBrakesValue");
+    outputCarBrakes.innerHTML = sliderCarBrakes.value;
+
+    sliderCarBrakes.oninput = function () {
+        outputCarBrakes.innerHTML = this.value;
+        $('#CarBrakesSlider').val(sliderCarBrakes);
+    }
+
+    //Car Undercarriage
+    var sliderCarUndercarriage = document.getElementById("CarUndercarriageSlider");
+    var outputCarUndercarriage = document.getElementById("CarUndercarriageValue");
+    outputCarUndercarriage.innerHTML = sliderCarUndercarriage.value;
+
+    sliderCarUndercarriage.oninput = function () {
+        outputCarUndercarriage.innerHTML = this.value;
+        $('#CarUndercarriageSlider').val(sliderCarUndercarriage);
+    }
+
+    //Truck Hydraulics
+    var sliderTruckHydraulics = document.getElementById("TruckHydraulicsSlider");
+    var outputTruckHydraulics = document.getElementById("TruckHydraulicsValue");
+    outputTruckHydraulics.innerHTML = sliderTruckHydraulics.value;
+
+    sliderTruckHydraulics.oninput = function () {
+        outputTruckHydraulics.innerHTML = this.value;
+        $('#TruckHydraulicsSlider').val(sliderTruckHydraulics);
+    }    
+
+</script>

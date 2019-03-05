@@ -1,0 +1,32 @@
+﻿@model SSAspNet.Model.Order
+
+@{
+    ViewBag.Title = "OrderResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<page class="Page">
+    <h2>Order Result</h2>
+
+    <table class="tableSS" align="center">
+
+        <tr>
+            <td>Order Id</td>
+            <td>@Html.TextBoxFor(o => o.OrderId)</td>            
+        </tr>
+        <tr>
+            <td>Car Model</td>
+            <td>@Html.TextBoxFor(o => o.ModelCar)</td>            
+        </tr>
+        <tr>
+            <td>Car Number</td>
+            <td>@Html.TextBoxFor(o => o.NumberCar)</td>            
+        </tr>
+        <tr>
+            <td>Total cost order</td>
+            <td>@Html.TextBoxFor(o=> o.CostOrder)</td>            
+        </tr>        
+        <tr>
+            <td><button type="button" class="buttonCancel" nclick="location.href='@Url.Action("MainMenu", "MainController")'">OK</button></td>            
+        </tr>
+    </table>
+</page>

@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<page class="Page">
+    <h2>Input data for new order</h2>
+
+    <h3>Please, select type car:</h3>
+
+    @using (Html.BeginForm("SelectNewOrder", "NewOrder", FormMethod.Post))
+    {
+    <div class="selectNewOrderRadioButton">
+
+        @Html.RadioButton("Car", "PasCar", true)<span>Passanger car</span>
+        <br>
+        @Html.RadioButton("Car", "Truck", false)<span>Truck</span>
+        <br>
+        @Html.RadioButton("Car", "Bus", false)<span>Bus</span>
+        <br>
+        <button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button>
+        <input type="submit" class="buttonOK" value="OK"/>
+    </div>
+    }
+
+</page>

@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+
+<page class="Page">
+    <table align="center">
+        <tr>
+            <th><button type="button" class="buttonMainMenu" onclick="location.href='@Url.Action("SelectNewOrder", "NewOrder")'">New order</button></th>
+            <th><img src="~/Content/Actual_orders.png" class="imgMainMenu" alt="Actual order"/></th>
+        </tr>
+        <tr>
+            <td><button type="button" class="buttonMainMenu" onclick="location.href='@Url.Action("FindOrderForId", "Orders")'">Edit order</button></td>
+            <td><img src="~/Content/edit.png" alt="Actual order" class="imgMainMenu" /></td>
+        </tr>
+        <tr>
+            <th><button type="button" class="buttonMainMenu" onclick="location.href='@Url.Action("ActualOrders", "Orders")'">Actual orders</button></th>
+            <th><img src="~/Content/Done_orders.png" alt="Done order" class="imgMainMenu" /></th>
+        </tr>
+        <tr>
+            <td><button type="button" class="buttonMainMenu" onclick="location.href='@Url.Action("DoneOrders", "Orders")'">Done orders</button></td>
+            <td><img src="~/Content/New_order.png" alt="New order" class="imgMainMenu" /></td>
+        </tr>
+    </table>
+</page>
