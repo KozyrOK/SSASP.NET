@@ -1,15 +1,10 @@
-﻿using System;
+﻿using SSAspNet.Models;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace SSAspNet.Model
 {
-    public enum StateOrder
-    {
-        Actual = 0,
-        Done = 1
-    }
-
     public class Orderlist : INotifyPropertyChanged
     {        
         protected DateTime _dateTimeOrder;

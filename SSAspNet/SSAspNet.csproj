@@ -168,6 +168,7 @@
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\Pricelist.cs" />
     <Compile Include="Models\SSAspNetContext.cs" />
+    <Compile Include="Models\StateOrder.cs" />
     <Compile Include="Models\TruckCarServiceStation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -260,10 +261,13 @@
     <Content Include="Views\NewOrder\NewOrderBus.cshtml" />
     <Content Include="Views\Main\MainPricelistEdit.cshtml" />
     <Content Include="Views\NewOrder\OrderResult.cshtml" />
+    <Content Include="Views\Orders\FindOrderForId.cshtml" />
+    <Content Include="Views\Orders\EditOrder.cshtml" />
+    <Content Include="Views\Orders\ActualOrders.cshtml" />
+    <Content Include="Views\Orders\DoneOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Orders\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

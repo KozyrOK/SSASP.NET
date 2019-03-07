@@ -1,0 +1,50 @@
+﻿@model SSAspNet.Model.Order
+@using SSAspNet.Models
+
+@{    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<page class="Page">
+    <h2 align="center">Order edit</h2>
+
+    @using (Html.BeginForm("OrdersController", "EditOrder", FormMethod.Post))
+    {
+        <table class="tableSS" align="center">
+            <tr>
+                <td>Order Id</td>
+                <td>@Html.TextBoxFor(m => m.OrderId)</td>                
+            </tr>
+            <tr>
+                <td>Order data</td>
+                <td>@Html.TextBoxFor(m => m.DateTimeOrder)</td>               
+            </tr>
+            <tr>
+                <td>Car Model</td>
+                <td>@Html.TextBoxFor(m => m.ModelCar)</td>                
+            </tr>
+            <tr>
+                <td>Car Number</td>
+                <td>@Html.TextBoxFor(m => m.NumberCar)</td>                
+            </tr>
+            <tr>
+                <td>State order</td>
+                <td>@Html.DropDownListFor(m => m.StateOrder, new SelectList(Enum.GetValues(typeof(StateOrder))), "Select StateOrder")</td>               
+            </tr>
+            <tr>
+                <td>Cost Order ($)</td>
+                <td>@Html.TextBoxFor(m => m.CostOrder)</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Order Paid ($)</td>
+                <td>@Html.TextBoxFor(m => m.OrderPaid)</td>
+                <td>$</td>
+            </tr>           
+            <tr>
+                <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
+                <td><input type="submit" class="buttonOK" value="Edit" /></td>
+            </tr>
+        </table>
+    }
+</page>

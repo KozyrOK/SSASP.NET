@@ -28,7 +28,7 @@ namespace SSAspNet.Controllers
         [HttpPost]
         public ActionResult NewOrderPasCar(PasCarServiceStation car)
         {
-            Order order = new Order();
+            Order order = new Order();            
             car.FillOrder(ref order);
             return View("OrderResult", order);
         }

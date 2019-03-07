@@ -8,60 +8,41 @@ namespace SSAspNet.Controllers
 {
     public class OrdersController : Controller
     {
-        private SSAspNetContext db = new SSAspNetContext();
 
-        [HttpGet]
         public ActionResult FindOrderForId()
         {
             return View();
         }
-                
+
+        [HttpGet]
+        public ActionResult EditOrder(int? id)
+        {
+            if (id != null)
+            {
+                Order order = new Order(id);
+                return View(order);
+            }
+            return View("~/Views/Main/MainMenu.cshtml");
+        }
+
+        [HttpPost]
+        public ActionResult EditOrder(Order order)
+        {            
+            order.EditOrder();
+            return View("~/Views/Main/MainMenu.cshtml");
+        }
+
+
         public ActionResult ActualOrders()
         {
+            SSAspNetContext db = new SSAspNetContext();
             return View(db.Orders.ToList());
         }
 
         public ActionResult DoneOrders()
         {
+            SSAspNetContext db = new SSAspNetContext();
             return View(db.Orders.ToList());
-        }
-
-        [HttpGet]
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Order order = db.Orders.Find(id);
-            if (order == null)
-            {
-                return HttpNotFound();
-            }
-            return View(order);
-        }
-
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OrderId,DateTimeOrder,ModelCar,NumberCar,StateOrder,CostOrder,OrderPaid,ConditionCar")] Order order)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(order).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(order);
-        }
-       
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        }        
     }
 }

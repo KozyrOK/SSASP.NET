@@ -30,49 +30,49 @@
             <td align="center">@Html.CheckBoxFor(m => m.CarBodyIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBodySlider"></td>
             <td>Value: <span id="CarBodyValue"></span></td>
-            @Html.HiddenFor(m => m.CarBodyCondition, "CarBodySlider")
+            @*@Html.HiddenFor(m => m.CarBodyCondition, "CarBodySlider")*@
         </tr>
         <tr>
             <td>Car Wheels</td>
             <td align="center">@Html.CheckBoxFor(m => m.CarWheelsIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarWheelsSlider"></td>
             <td>Value: <span id="CarWheelsValue"></span></td>
-            @Html.HiddenFor(m => m.CarBodyCondition, "CarWheelsSlider")
+            @*@Html.HiddenFor(m => m.CarBodyCondition, "CarWheelsSlider")*@
         </tr>
         <tr>
             <td>Car Engine</td>
             <td align="center">@Html.CheckBoxFor(m => m.CarEngineIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarEngineSlider"></td>
             <td>Value: <span id="CarEngineValue"></span></td>
-            @Html.HiddenFor(m => m.CarBodyCondition, "CarEngineSlider")
+            @*@Html.HiddenFor(m => m.CarBodyCondition, "CarEngineSlider")*@
         </tr>
         <tr>
             <td>Car Brakes</td>
             <td align="center">@Html.CheckBoxFor(m => m.CarBrakesIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBrakesSlider"></td>
             <td>Value: <span id="CarBrakesValue"></span></td>
-            @Html.HiddenFor(m => m.CarBodyCondition, "CarBrakesSlider")
+            @*@Html.HiddenFor(m => m.CarBodyCondition, "CarBrakesSlider")*@
         </tr>
         <tr>
             <td>Car Undercarriage</td>
             <td align="center">@Html.CheckBoxFor(m => m.CarUndercarriageIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarUndercarriageSlider"></td>
             <td>Value: <span id="CarUndercarriageValue"></span></td>
-            @Html.HiddenFor(m => m.CarBodyCondition, "CarUndercarriageSlider")
+            @*@Html.HiddenFor(m => m.CarBodyCondition, "CarUndercarriageSlider")*@
         </tr>
         <tr>
             <td>Bus handstrails</td>
             <td align="center">@Html.CheckBoxFor(m => m.BusHandsrailsIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="BusHandsrailsSlider"></td>
             <td>Value: <span id="BusHandsrailsValue"></span></td>
-            @Html.HiddenFor(m => m.BusHandsrailsCondition, "BusHandsrailsSlider")
+            @*@Html.HiddenFor(m => m.BusHandsrailsCondition, "BusHandsrailsSlider")*@
         </tr>
         <tr>
             <td>Bus salon</td>
             <td align="center">@Html.CheckBoxFor(m => m.BusSalonIsService, false)</td>
             <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="BusSalonSlider"></td>
             <td>Value: <span id="BusSalonValue"></span></td>
-            @Html.HiddenFor(m => m.BusSalonCondition, "BusHandsrailsSlider")
+            @*@Html.HiddenFor(m => m.BusSalonCondition, "BusHandsrailsSlider")*@
         </tr>
         <tr>
             <td>Bus seats upholstery</td>
@@ -97,7 +97,7 @@
 
     sliderCarBody.oninput = function () {
         outputCarBody.innerHTML = this.value;
-        $('#CarBodySlider').val(sliderCarBody);
+        //$('#CarBodySlider').val(sliderCarBody);
     }
 
     //Car Wheels
@@ -107,7 +107,7 @@
 
     sliderCarWheels.oninput = function () {
         outputCarWheels.innerHTML = this.value;
-        $('#CarWheelsSlider').val(sliderCarWheels);
+        //$('#CarWheelsSlider').val(sliderCarWheels);
     }
 
     //Car Engine
@@ -117,7 +117,7 @@
 
     sliderCarEngine.oninput = function () {
         outputCarEngine.innerHTML = this.value;
-        $('#CarEngineSlider').val(sliderCarEngine);
+        //$('#CarEngineSlider').val(sliderCarEngine);
     }
 
     //Car Brakes
@@ -127,7 +127,7 @@
 
     sliderCarBrakes.oninput = function () {
         outputCarBrakes.innerHTML = this.value;
-        $('#CarBrakesSlider').val(sliderCarBrakes);
+        //$('#CarBrakesSlider').val(sliderCarBrakes);
     }
 
     //Car Undercarriage
@@ -137,7 +137,7 @@
 
     sliderCarUndercarriage.oninput = function () {
         outputCarUndercarriage.innerHTML = this.value;
-        $('#CarUndercarriageSlider').val(sliderCarUndercarriage);
+        //$('#CarUndercarriageSlider').val(sliderCarUndercarriage);
     }
 
     //Bus handstrails
@@ -147,7 +147,7 @@
 
     sliderBusHandsrails.oninput = function () {
         outputBusHandsrails.innerHTML = this.value;
-        $('#BusHandsrailsSlider').val(sliderBusHandsrails);
+        //$('#BusHandsrailsSlider').val(sliderBusHandsrails);
     }
 
     //Bus salon
@@ -157,7 +157,7 @@
 
     sliderBusSalon.oninput = function () {
         outputBusSalon.innerHTML = this.value;
-        $('#BusSalonSlider').val(sliderBusSalon);
+        //$('#BusSalonSlider').val(sliderBusSalon);
     }
 
 </script>

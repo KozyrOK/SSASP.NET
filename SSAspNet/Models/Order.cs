@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SSAspNet.Models;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
@@ -11,7 +12,7 @@ namespace SSAspNet.Model
 
         public Order() { }
 
-        public Order(int id)
+        public Order(int? id)
         {
             using (SSAspNetContext ordersContext = new SSAspNetContext())
             {
