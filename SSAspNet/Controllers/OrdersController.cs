@@ -1,6 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Mvc;
 using SSAspNet.Model;
 
@@ -9,40 +8,43 @@ namespace SSAspNet.Controllers
     public class OrdersController : Controller
     {
 
+        [HttpGet]
         public ActionResult FindOrderForId()
         {
             return View();
         }
 
-        [HttpGet]
-        public ActionResult EditOrder(int? id)
+        [HttpPost]
+        public ActionResult FindOrderForId(int? id)
         {
-            if (id != null)
+            if (id > 0 && id != null)
             {
                 Order order = new Order(id);
-                return View(order);
+                if (order.OrderId != null )
+                return View("~/Views/Orders/EditOrder.cshtml", order);
             }
             return View("~/Views/Main/MainMenu.cshtml");
         }
 
         [HttpPost]
         public ActionResult EditOrder(Order order)
-        {            
+        {
             order.EditOrder();
             return View("~/Views/Main/MainMenu.cshtml");
         }
 
-
         public ActionResult ActualOrders()
         {
-            SSAspNetContext db = new SSAspNetContext();
-            return View(db.Orders.ToList());
+            Order ActualOrders = new Order();
+            List<Order> orders = ActualOrders.GetActualOrders();
+            return View(orders);
         }
 
         public ActionResult DoneOrders()
         {
-            SSAspNetContext db = new SSAspNetContext();
-            return View(db.Orders.ToList());
+            Order DoneOrders = new Order();
+            List<Order> orders = DoneOrders.GetDoneOrders();
+            return View(orders);
         }        
     }
 }

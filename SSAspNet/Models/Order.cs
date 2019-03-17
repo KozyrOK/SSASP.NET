@@ -75,19 +75,19 @@ namespace SSAspNet.Model
             }
         }        
 
-        public List<Orderlist> GetActualOrders()
+        public List<Order> GetActualOrders()
         {
             using (SSAspNetContext context = new SSAspNetContext())
             {
-                return context.Orders.Where(p => p.StateOrder == 0).OrderBy(p => p.OrderId).ToList<Orderlist>();
+                return context.Orders.Where(p => p.StateOrder == 0).OrderBy(p => p.OrderId).ToList();
             }
         }
 
-        public List<Orderlist> GetDoneOrders()
+        public List<Order> GetDoneOrders()
         {
             using (SSAspNetContext context = new SSAspNetContext())
             {
-                return context.Orders.Where(p => p.StateOrder == (StateOrder)1).OrderBy(p => p.OrderId).ToList<Orderlist>();
+                return context.Orders.Where(p => p.StateOrder == (StateOrder)1).OrderBy(p => p.OrderId).ToList();
             }
         }
     }

@@ -8,7 +8,7 @@
 <page class="Page">
     <h2 align="center">Order edit</h2>
 
-    @using (Html.BeginForm("OrdersController", "EditOrder", FormMethod.Post))
+    @using (Html.BeginForm("EditOrder", "Orders", FormMethod.Post))
     {
         <table class="tableSS" align="center">
             <tr>
@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td>State order</td>
-                <td>@Html.DropDownListFor(m => m.StateOrder, new SelectList(Enum.GetValues(typeof(StateOrder))), "Select StateOrder")</td>               
+                <td>@Html.DropDownListFor(m => m.StateOrder, new SelectList(Enum.GetValues(typeof(StateOrder))))</td>               
             </tr>
             <tr>
                 <td>Cost Order ($)</td>
@@ -42,7 +42,7 @@
                 <td>$</td>
             </tr>           
             <tr>
-                <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
+                <td><button type="button" class="buttonCancel" onclick="location.href='@Url.Action("MainMenu","Main")'">Cancel</button></td>
                 <td><input type="submit" class="buttonOK" value="Edit" /></td>
             </tr>
         </table>

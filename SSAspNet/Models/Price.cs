@@ -16,16 +16,16 @@ namespace SSAspNet.Model
                 Price price = priceContext.Prices.Find(id);
                 if (price != null)
                 {
-                    _carBody = price.CarBody;
-                    _carWheels = price.CarWheels;
-                    _carEngine = price.CarEngine;
-                    _carBrakes = price.CarBrakes;
-                    _carUndercarriage = price.CarUndercarriage;
-                    _busSalon = price.BusSalon;
-                    _busHandsrails = price.BusHandsrails;
-                    _busUpholstery = price.BusUpholstery;
-                    _pasCarwheelBalancing = price.PasCarwheelBalancing;
-                    _truckHydraulics = price.TruckHydraulics;
+                    CarBody = price.CarBody;
+                    CarWheels = price.CarWheels;
+                    CarEngine = price.CarEngine;
+                    CarBrakes = price.CarBrakes;
+                    CarUndercarriage = price.CarUndercarriage;
+                    BusSalon = price.BusSalon;
+                    BusHandsrails = price.BusHandsrails;
+                    BusUpholstery = price.BusUpholstery;
+                    PasCarwheelBalancing = price.PasCarwheelBalancing;
+                    TruckHydraulics = price.TruckHydraulics;
                 }                
             }
         }       

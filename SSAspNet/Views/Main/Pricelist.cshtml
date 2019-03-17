@@ -1,0 +1,74 @@
+﻿@model SSAspNet.Model.Price    
+
+@{    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<page class="Page">
+    <h2 align="center">Pricelist</h2>
+
+    @using (Html.BeginForm("Pricelist", "Main", FormMethod.Post))
+    {
+        <table class="tablePricelist" align="center">
+            <tr>
+                <th>Service</th>
+                <th>Cost</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Car body</td>
+                <td>@Model.CarBody</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Car Wheels</td>
+                <td>@Model.CarWheels</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Car Engine</td>
+                <td>@Model.CarEngine</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Car Brakes</td>
+                <td>@Model.CarBrakes</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Car Undercarriage</td>
+                <td>@Model.CarUndercarriage</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Bus Salon</td>
+                <td>@Model.BusSalon</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Bus Handsrails</td>
+                <td>@Model.BusHandsrails</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Bus Upholstery</td>
+                <td>@Model.BusUpholstery</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Wheel Balancing</td>
+                <td>@Model.PasCarwheelBalancing</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td>Truck Hydraulics</td>
+                <td>@Model.TruckHydraulics</td>
+                <td>$</td>
+            </tr>
+            <tr>
+                <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
+                <td><input type="submit" class="buttonOK" value="Edit" id="price"/></td>
+            </tr>
+        </table>
+    }
+    </page>

@@ -1,14 +1,12 @@
 ﻿@model SSAspNet.Model.Order
 
-@{
-    ViewBag.Title = "OrderResult";
+@{   
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <page class="Page">
-    <h2>Order Result</h2>
+    <h2 align="center">Order Result</h2>
 
-    <table class="tableSS" align="center">
-
+    <table align="center">
         <tr>
             <td>Order Id:</td>
             <td>@Html.TextBoxFor(o => o.OrderId)</td>            
@@ -23,10 +21,14 @@
         </tr>
         <tr>
             <td>Total cost order:</td>
-            <td>@Html.TextBoxFor(o=> o.CostOrder)</td>            
-        </tr>        
+            <td>@Html.TextBoxFor(o => o.CostOrder)</td>            
+        </tr>
         <tr>
-            <td><button type="button" class="buttonCancel" nclick="location.href='@Url.Action("MainMenu", "MainController")'">OK</button></td>            
+            <td>Total condition car (from 0 to 100%)</td>
+            <td>@Html.TextBoxFor(o => o.ConditionCar)</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button type="button" class="buttonOK" align="center" onclick="location.href='@Url.Action("MainMenu", "Main")'">OK</button></td>            
         </tr>
     </table>
 </page>

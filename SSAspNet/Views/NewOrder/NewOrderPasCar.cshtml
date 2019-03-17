@@ -1,5 +1,4 @@
-﻿
-@model SSAspNet.Model.PasCarServiceStation
+﻿@model SSAspNet.Model.PasCarServiceStation
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,17 +7,17 @@
     <h2 align="center">New Order</h2>
     <h3 align="center">Passanger car</h3>
 
-    @using (Html.BeginForm("NewOrderPasCar", "NewOrderController", FormMethod.Post))
+    @using (Html.BeginForm("NewOrderPasCar", "NewOrder", FormMethod.Post))
     {
         <table class="tableSS" align="center">
 
             <tr>
                 <td>Car Model</td>
-                <td>@Html.TextBoxFor(m => m.ModelCar)</td>
+                <td>@Html.TextBoxFor(car => car.ModelCar)</td>
             </tr>
             <tr>
                 <td>Car Number</td>
-                <td>@Html.TextBoxFor(m => m.NumberCar)</td>
+                <td>@Html.TextBoxFor(car => car.NumberCar)</td>
             </tr>
             <tr>
                 <td></td>
@@ -28,48 +27,48 @@
             </tr>
             <tr>
                 <td>Car Body</td>
-                <td align="center">@Html.CheckBoxFor(m => m.CarBodyIsService, false)</td>
+                <td align="center">@Html.CheckBoxFor(car => car.CarBodyIsService)</td>
                 <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBodySlider"></td>
                 <td>Value: <span id="CarBodyValue"></span></td>
-
+                @Html.HiddenFor(car => car.CarBodyCondition, new { id = "CarBodySlider" } )
             </tr>
             <tr>
                 <td>Car Wheels</td>
-                <td align="center">@Html.CheckBoxFor(m => m.CarWheelsIsService, false)</td>
+                <td align="center">@Html.CheckBoxFor(car => car.CarWheelsIsService)</td>
                 <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarWheelsSlider"></td>
                 <td>Value: <span id="CarWheelsValue"></span></td>
-                @Html.HiddenFor(m => m.CarBodyCondition, "CarWheelsSlider")
+                @Html.HiddenFor(car => car.CarWheelsCondition, new { id = "CarWheelsSlider" } )
             </tr>
             <tr>
                 <td>Car Engine</td>
-                <td align="center">@Html.CheckBoxFor(m => m.CarEngineIsService, false)</td>
+                <td align="center">@Html.CheckBoxFor(car => car.CarEngineIsService)</td>
                 <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarEngineSlider"></td>
                 <td>Value: <span id="CarEngineValue"></span></td>
-                @Html.HiddenFor(m => m.CarBodyCondition, "CarEngineSlider")
+                @Html.HiddenFor(car => car.CarEngineCondition, new { id = "CarEngineSlider" } )
             </tr>
             <tr>
                 <td>Car Brakes</td>
-                <td align="center">@Html.CheckBoxFor(m => m.CarBrakesIsService, false)</td>
+                <td align="center">@Html.CheckBoxFor(car => car.CarBrakesIsService)</td>
                 <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBrakesSlider"></td>
                 <td>Value: <span id="CarBrakesValue"></span></td>
-                @Html.HiddenFor(m => m.CarBodyCondition, "CarBrakesSlider")
+                @Html.HiddenFor(car => car.CarBrakesCondition, new { id = "CarBrakesSlider" } )
             </tr>
             <tr>
                 <td>Car Undercarriage</td>
-                <td align="center">@Html.CheckBoxFor(m => m.CarUndercarriageIsService, false)</td>
+                <td align="center">@Html.CheckBoxFor(car => car.CarUndercarriageIsService)</td>
                 <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarUndercarriageSlider"></td>
                 <td>Value: <span id="CarUndercarriageValue"></span></td>
-                @Html.HiddenFor(m => m.CarBodyCondition, "CarUndercarriageSlider")
+                @Html.HiddenFor(car => car.CarUndercarriageCondition, new { id = "CarUndercarriageSlider" } )
             </tr>
             <tr>
                 <td>Wheel Balancing</td>
-                <td align="center">@Html.CheckBoxFor(m => m.PasCarwheelBalancingIsService, false)</td>
+                <td align="center">@Html.CheckBoxFor(car => car.PasCarwheelBalancingIsService)</td>
                 <td></td>
             </tr>
             <tr>
                 <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
                 <td></td>
-                <td><input type="submit" class="buttonOK" value="Save"/></td>
+                <td><input type="submit" class="buttonOK" value="Submit" id="car"/></td>
             </tr>
         </table>
     }

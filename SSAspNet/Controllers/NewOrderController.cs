@@ -28,9 +28,11 @@ namespace SSAspNet.Controllers
         [HttpPost]
         public ActionResult NewOrderPasCar(PasCarServiceStation car)
         {
-            Order order = new Order();            
+            Order order = new Order();
             car.FillOrder(ref order);
-            return View("OrderResult", order);
+            order.AddNewOrder();
+            order.GetLastOrderId();
+            return View("~/Views/NewOrder/OrderResult.cshtml", order);
         }
         
         [HttpPost]
@@ -38,7 +40,9 @@ namespace SSAspNet.Controllers
         {
             Order order = new Order();
             car.FillOrder(ref order);
-            return View("OrderResult", order);
+            order.AddNewOrder();
+            order.GetLastOrderId();
+            return View("~/Views/NewOrder/OrderResult.cshtml", order);
         }        
 
         [HttpPost]
@@ -46,7 +50,9 @@ namespace SSAspNet.Controllers
         {
             Order order = new Order();
             car.FillOrder(ref order);
-            return View("OrderResult", order);
+            order.AddNewOrder();
+            order.GetLastOrderId();
+            return View("~/Views/NewOrder/OrderResult.cshtml", order);
         }
     }
 }

@@ -244,8 +244,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Main\MainMenu.cshtml" />
-    <Content Include="Views\Main\MainInfo.cshtml" />
-    <Content Include="Views\Main\MainPricelist.cshtml" />
+    <Content Include="Views\Main\Info.cshtml" />
+    <Content Include="Views\Main\Pricelist.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -259,7 +259,7 @@
     <Content Include="Views\NewOrder\NewOrderPasCar.cshtml" />
     <Content Include="Views\NewOrder\NewOrderTruck.cshtml" />
     <Content Include="Views\NewOrder\NewOrderBus.cshtml" />
-    <Content Include="Views\Main\MainPricelistEdit.cshtml" />
+    <Content Include="Views\Main\PricelistEdit.cshtml" />
     <Content Include="Views\NewOrder\OrderResult.cshtml" />
     <Content Include="Views\Orders\FindOrderForId.cshtml" />
     <Content Include="Views\Orders\EditOrder.cshtml" />

@@ -9,30 +9,43 @@ namespace SSAspNet.Controllers
         {            
             return View();
         }
-        
-        public ViewResult MainPricelist()
+
+        [HttpGet]
+        public ViewResult Pricelist()
         {
             Price price = new Price(1);            
             return View(price);
         }
 
-        [HttpGet]
-        public ViewResult MainPricelistEdit()
+        [HttpPost]
+        public ViewResult Pricelist(Price price)
         {
-            Price price = new Price(1);
-            return View(price);
+            Price newprice = new Price
+            {
+                CarBody = price.CarBody,
+                CarWheels = price.CarWheels,
+                CarEngine = price.CarEngine,
+                CarBrakes = price.CarBrakes,
+                CarUndercarriage = price.CarUndercarriage,
+                BusSalon = price.BusSalon,
+                BusHandsrails = price.BusHandsrails,
+                BusUpholstery = price.BusUpholstery,
+                PasCarwheelBalancing = price.PasCarwheelBalancing,
+                TruckHydraulics = price.TruckHydraulics
+            };
+            return View("~/Views/Main/PricelistEdit.cshtml", newprice);
         }
 
         [HttpPost]
-        public ViewResult MainPricelistEdit(Price price)
+        public ViewResult PricelistEdit(Price price)
         {
             price.EditPrice();
             return View("MainMenu");
         }
 
-        public ViewResult MainInfo()
+        public ViewResult Info()
         {
-            return View("MainInfo");
+            return View();
         }
     }
 }

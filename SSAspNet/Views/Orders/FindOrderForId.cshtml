@@ -1,25 +1,20 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <page class="Page">
 <h2 align="center">Edit Order</h2>
 
-@using (Html.BeginForm("EditOrder", "OrdersController", FormMethod.Post))
+@using (Html.BeginForm("FindOrderForId", "Orders", FormMethod.Post))
 {
     <table class="tableSS" align="center">
 
         <tr>
             <td>Please, input order Id</td>
-            <td><input type="number"/></td>
-        </tr>
+            <td><input type="number" name="id"/></td>
+        </tr> 
         <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>            
+            <td><button type="button" class="buttonCancel" onclick="location.href='@Url.Action("MainMenu","Main")'">Cancel</button></td>            
             <td><input type="submit" class="buttonOK" value="OK" /></td>
         </tr>
     </table>

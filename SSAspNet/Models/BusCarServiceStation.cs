@@ -2,7 +2,7 @@
 
 namespace SSAspNet.Model
 {
-    public class BusCarServiceStation : CarServiceStation, INotifyPropertyChanged
+    public class BusCarServiceStation : PasCarServiceStation, INotifyPropertyChanged
     {
         protected int _busSalonCondition;
         protected bool _busSalonIsService;
