@@ -1,6 +1,6 @@
-﻿@model SSAspNet.Model.Price    
+﻿@model SSAspNet.Model.Price
 
-@{    
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -21,54 +21,54 @@
                 <td>$</td>
             </tr>
             <tr>
-                <td>Car Wheels</td>
+                <td>Car wheels</td>
                 <td>@Model.CarWheels</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Car Engine</td>
+                <td>Car engine</td>
                 <td>@Model.CarEngine</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Car Brakes</td>
+                <td>Car brakes</td>
                 <td>@Model.CarBrakes</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Car Undercarriage</td>
+                <td>Car undercarriage</td>
                 <td>@Model.CarUndercarriage</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Bus Salon</td>
+                <td>Bus salon</td>
                 <td>@Model.BusSalon</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Bus Handsrails</td>
+                <td>Bus handsrails</td>
                 <td>@Model.BusHandsrails</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Bus Upholstery</td>
+                <td>Bus upholstery</td>
                 <td>@Model.BusUpholstery</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Wheel Balancing</td>
+                <td>Wheel balancing</td>
                 <td>@Model.PasCarwheelBalancing</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td>Truck Hydraulics</td>
+                <td>Truck hydraulics</td>
                 <td>@Model.TruckHydraulics</td>
                 <td>$</td>
             </tr>
             <tr>
-                <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
-                <td><input type="submit" class="buttonOK" value="Edit" id="price"/></td>
+                <td><button type="button" class="buttonCancel" onclick="location.href='@Url.Action("MainMenu", "Main")'">Cancel</button></td>
+                <td><button type="button" class="buttonOK" onclick="location.href='@Url.Action("PricelistEdit", "Main")'">Edit</button></td>
             </tr>
         </table>
     }
-    </page>
+</page>

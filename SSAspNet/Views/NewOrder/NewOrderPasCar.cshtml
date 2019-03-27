@@ -9,116 +9,59 @@
 
     @using (Html.BeginForm("NewOrderPasCar", "NewOrder", FormMethod.Post))
     {
-        <table class="tableSS" align="center">
+    <table class="tableSS" align="center">
 
-            <tr>
-                <td>Car Model</td>
-                <td>@Html.TextBoxFor(car => car.ModelCar)</td>
-            </tr>
-            <tr>
-                <td>Car Number</td>
-                <td>@Html.TextBoxFor(car => car.NumberCar)</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><span>Parameter selection:</span></td>
-                <td><span>Detail condition:</span></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Car Body</td>
-                <td align="center">@Html.CheckBoxFor(car => car.CarBodyIsService)</td>
-                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBodySlider"></td>
-                <td>Value: <span id="CarBodyValue"></span></td>
-                @Html.HiddenFor(car => car.CarBodyCondition, new { id = "CarBodySlider" } )
-            </tr>
-            <tr>
-                <td>Car Wheels</td>
-                <td align="center">@Html.CheckBoxFor(car => car.CarWheelsIsService)</td>
-                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarWheelsSlider"></td>
-                <td>Value: <span id="CarWheelsValue"></span></td>
-                @Html.HiddenFor(car => car.CarWheelsCondition, new { id = "CarWheelsSlider" } )
-            </tr>
-            <tr>
-                <td>Car Engine</td>
-                <td align="center">@Html.CheckBoxFor(car => car.CarEngineIsService)</td>
-                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarEngineSlider"></td>
-                <td>Value: <span id="CarEngineValue"></span></td>
-                @Html.HiddenFor(car => car.CarEngineCondition, new { id = "CarEngineSlider" } )
-            </tr>
-            <tr>
-                <td>Car Brakes</td>
-                <td align="center">@Html.CheckBoxFor(car => car.CarBrakesIsService)</td>
-                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBrakesSlider"></td>
-                <td>Value: <span id="CarBrakesValue"></span></td>
-                @Html.HiddenFor(car => car.CarBrakesCondition, new { id = "CarBrakesSlider" } )
-            </tr>
-            <tr>
-                <td>Car Undercarriage</td>
-                <td align="center">@Html.CheckBoxFor(car => car.CarUndercarriageIsService)</td>
-                <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarUndercarriageSlider"></td>
-                <td>Value: <span id="CarUndercarriageValue"></span></td>
-                @Html.HiddenFor(car => car.CarUndercarriageCondition, new { id = "CarUndercarriageSlider" } )
-            </tr>
-            <tr>
-                <td>Wheel Balancing</td>
-                <td align="center">@Html.CheckBoxFor(car => car.PasCarwheelBalancingIsService)</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
-                <td></td>
-                <td><input type="submit" class="buttonOK" value="Submit" id="car"/></td>
-            </tr>
-        </table>
+        <tr>
+            <td>Car model</td>
+            <td>@Html.TextBoxFor(model => model.ModelCar)</td>
+        </tr>
+        <tr>
+            <td>Car number</td>
+            <td>@Html.TextBoxFor(model => model.NumberCar)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><span>Parameter selection:</span></td>
+            <td>
+                <span>
+                    Detail condition:<br>
+                    (to set value from 0 to 100%)
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>Car body</td>
+            <td align="center">@Html.CheckBoxFor(model => model.CarBodyIsService)</td>
+            <td>@Html.EditorFor(model => model.CarBodyCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>
+        </tr>  
+        <tr>
+            <td>Car wheels</td>
+            <td align="center">@Html.CheckBoxFor(model => model.CarWheelsIsService)</td>           
+            <td>@Html.EditorFor(model => model.CarWheelsCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>
+        <tr>
+            <td>Car engine</td>
+            <td align="center">@Html.CheckBoxFor(model => model.CarEngineIsService)</td>          
+            <td>@Html.EditorFor(model => model.CarEngineCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>
+        <tr>
+            <td>Car brakes</td>
+            <td align="center">@Html.CheckBoxFor(model => model.CarBrakesIsService)</td>            
+            <td>@Html.EditorFor(model => model.CarBrakesCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>
+        <tr>
+            <td>Car undercarriage</td>
+            <td align="center">@Html.CheckBoxFor(model => model.CarUndercarriageIsService)</td>            
+            <td>@Html.EditorFor(model => model.CarUndercarriageCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>
+        <tr>
+            <td>Wheel balancing</td>
+            <td align="center">@Html.CheckBoxFor(model => model.PasCarwheelBalancingIsService)</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
+            <td></td>
+            <td><input type="submit" class="buttonOK" value="Submit" id="submitButton"/></td>
+        </tr>
+    </table>
     }
 </page>
-
-<script>
-
-    //Car Body
-    var sliderCarBody = document.getElementById("CarBodySlider");
-    var outputCarBody = document.getElementById("CarBodyValue");
-    outputCarBody.innerHTML = sliderCarBody.value;
-
-    sliderCarBody.oninput = function () {
-        outputCarBody.innerHTML = this.value;       
-    }
-
-    //Car Wheels
-    var sliderCarWheels = document.getElementById("CarWheelsSlider");
-    var outputCarWheels = document.getElementById("CarWheelsValue");
-    outputCarWheels.innerHTML = sliderCarWheels.value;
-
-    sliderCarWheels.oninput = function () {
-        outputCarWheels.innerHTML = this.value;       
-    }
-
-    //Car Engine
-    var sliderCarEngine = document.getElementById("CarEngineSlider");
-    var outputCarEngine = document.getElementById("CarEngineValue");
-    outputCarEngine.innerHTML = sliderCarEngine.value;
-
-    sliderCarEngine.oninput = function () {
-        outputCarEngine.innerHTML = this.value;        
-    }
-
-    //Car Brakes
-    var sliderCarBrakes = document.getElementById("CarBrakesSlider");
-    var outputCarBrakes = document.getElementById("CarBrakesValue");
-    outputCarBrakes.innerHTML = sliderCarBrakes.value;
-
-    sliderCarBrakes.oninput = function () {
-        outputCarBrakes.innerHTML = this.value;       
-    }
-
-    //Car Undercarriage
-    var sliderCarUndercarriage = document.getElementById("CarUndercarriageSlider");
-    var outputCarUndercarriage = document.getElementById("CarUndercarriageValue");
-    outputCarUndercarriage.innerHTML = sliderCarUndercarriage.value;
-
-    sliderCarUndercarriage.oninput = function () {
-        outputCarUndercarriage.innerHTML = this.value;        
-    }
-</script>
 

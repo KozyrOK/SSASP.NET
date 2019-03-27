@@ -12,73 +12,64 @@
     <table class="tableSS" align="center">
 
         <tr>
-            <td>Car Model</td>
+            <td>Car model</td>
             <td>@Html.TextBoxFor(m => m.ModelCar)</td>
         </tr>
         <tr>
-            <td>Car Number</td>
+            <td>Car number</td>
             <td>@Html.TextBoxFor(m => m.NumberCar)</td>
         </tr>
         <tr>
             <td></td>
             <td><span>Parameter selection:</span></td>
-            <td><span>Detail condition:</span></td>
-            <td></td>
+            <td>
+                <span>
+                    Detail condition:<br>
+                    (to set value from 0 to 100%)
+                </span>
+            </td>            
         </tr>
         <tr>
-            <td>Car Body</td>
+            <td>Car body</td>
             <td align="center">@Html.CheckBoxFor(m => m.CarBodyIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBodySlider"></td>
-            <td>Value: <span id="CarBodyValue"></span></td>
-            @Html.HiddenFor(m => m.CarBodyCondition, new { id = "CarBodySlider" } )
+            <td>@Html.EditorFor(m => m.CarBodyCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>           
         </tr>
         <tr>
-            <td>Car Wheels</td>
-            <td align="center">@Html.CheckBoxFor(m => m.CarWheelsIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarWheelsSlider"></td>
-            <td>Value: <span id="CarWheelsValue"></span></td>
-            @Html.HiddenFor(m => m.CarWheelsCondition, new { id = "CarWheelsSlider" } )
+            <td>Car wheels</td>
+            <td align="center">@Html.CheckBoxFor(m => m.CarWheelsIsService, false)</td>           
+            <td>@Html.EditorFor(m => m.CarWheelsCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>            
         </tr>
         <tr>
-            <td>Car Engine</td>
-            <td align="center">@Html.CheckBoxFor(m => m.CarEngineIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarEngineSlider"></td>
-            <td>Value: <span id="CarEngineValue"></span></td>
-            @Html.HiddenFor(m => m.CarEngineCondition, new { id = "CarEngineSlider" } )
+            <td>Car engine</td>
+            <td align="center">@Html.CheckBoxFor(m => m.CarEngineIsService, false)</td>            
+            <td>@Html.EditorFor(m => m.CarEngineCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>            
         </tr>
         <tr>
-            <td>Car Brakes</td>
-            <td align="center">@Html.CheckBoxFor(m => m.CarBrakesIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarBrakesSlider"></td>
-            <td>Value: <span id="CarBrakesValue"></span></td>
-           @Html.HiddenFor(m => m.CarBrakesCondition, new { id = "CarBrakesSlider" } )
+            <td>Car brakes</td>
+            <td align="center">@Html.CheckBoxFor(m => m.CarBrakesIsService, false)</td>            
+            <td>@Html.EditorFor(m => m.CarBrakesCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>           
         </tr>
         <tr>
-            <td>Car Undercarriage</td>
-            <td align="center">@Html.CheckBoxFor(m => m.CarUndercarriageIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="CarUndercarriageSlider"></td>
-            <td>Value: <span id="CarUndercarriageValue"></span></td>
-            @Html.HiddenFor(m => m.CarUndercarriageCondition, new { id = "CarUndercarriageSlider" } )
+            <td>Car undercarriage</td>
+            <td align="center">@Html.CheckBoxFor(m => m.CarUndercarriageIsService, false)</td>           
+            <td>@Html.EditorFor(m => m.CarUndercarriageCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>           
         </tr>
         <tr>
             <td>Bus handstrails</td>
-            <td align="center">@Html.CheckBoxFor(m => m.BusHandsrailsIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="BusHandsrailsSlider"></td>
-            <td>Value: <span id="BusHandsrailsValue"></span></td>
-            @Html.HiddenFor(m => m.BusHandsrailsCondition, new { id = "BusHandsrailsSlider" } )
+            <td align="center">@Html.CheckBoxFor(m => m.BusHandsrailsIsService, false)</td>           
+            <td>@Html.EditorFor(m => m.BusHandsrailsCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>           
         </tr>
         <tr>
             <td>Bus salon</td>
-            <td align="center">@Html.CheckBoxFor(m => m.BusSalonIsService, false)</td>
-            <td><input type="range" min="0" max="100" value="100" step="1" class="slider" id="BusSalonSlider"></td>
-            <td>Value: <span id="BusSalonValue"></span></td>
-            @Html.HiddenFor(m => m.BusSalonCondition, new { id = "BusSalonSliderSlider" } )
+            <td align="center">@Html.CheckBoxFor(m => m.BusSalonIsService, false)</td>            
+            <td>@Html.EditorFor(m => m.BusSalonCondition, new { htmlAttributes = new { @Value = "100", @min = "0", @max = "100", @step = "5" } } )</td>           
         </tr>
         <tr>
             <td>Bus seats upholstery</td>
             <td align="center">@Html.CheckBoxFor(m => m.BusUpholsteryIsService, false)</td>
             <td></td>
         </tr>
+
         <tr>
             <td><button type="button" class="buttonCancel" onclick="window.history.back();">Cancel</button></td>
             <td></td>
@@ -87,70 +78,3 @@
     </table>
     }
 </page>
-
-<script>
-
-    //Car Body
-    var sliderCarBody = document.getElementById("CarBodySlider");
-    var outputCarBody = document.getElementById("CarBodyValue");
-    outputCarBody.innerHTML = sliderCarBody.value;
-
-    sliderCarBody.oninput = function () {
-        outputCarBody.innerHTML = this.value;        
-    }
-
-    //Car Wheels
-    var sliderCarWheels = document.getElementById("CarWheelsSlider");
-    var outputCarWheels = document.getElementById("CarWheelsValue");
-    outputCarWheels.innerHTML = sliderCarWheels.value;
-
-    sliderCarWheels.oninput = function () {
-        outputCarWheels.innerHTML = this.value;       
-    }
-
-    //Car Engine
-    var sliderCarEngine = document.getElementById("CarEngineSlider");
-    var outputCarEngine = document.getElementById("CarEngineValue");
-    outputCarEngine.innerHTML = sliderCarEngine.value;
-
-    sliderCarEngine.oninput = function () {
-        outputCarEngine.innerHTML = this.value;       
-    }
-
-    //Car Brakes
-    var sliderCarBrakes = document.getElementById("CarBrakesSlider");
-    var outputCarBrakes = document.getElementById("CarBrakesValue");
-    outputCarBrakes.innerHTML = sliderCarBrakes.value;
-
-    sliderCarBrakes.oninput = function () {
-        outputCarBrakes.innerHTML = this.value;        
-    }
-
-    //Car Undercarriage
-    var sliderCarUndercarriage = document.getElementById("CarUndercarriageSlider");
-    var outputCarUndercarriage = document.getElementById("CarUndercarriageValue");
-    outputCarUndercarriage.innerHTML = sliderCarUndercarriage.value;
-
-    sliderCarUndercarriage.oninput = function () {
-        outputCarUndercarriage.innerHTML = this.value;        
-    }
-
-    //Bus handstrails
-    var sliderBusHandsrails = document.getElementById("BusHandsrailsSlider");
-    var outputBusHandsrails = document.getElementById("BusHandsrailsValue");
-    outputBusHandsrails.innerHTML = sliderBusHandsrails.value;
-
-    sliderBusHandsrails.oninput = function () {
-        outputBusHandsrails.innerHTML = this.value;        
-    }
-
-    //Bus salon
-    var sliderBusSalon = document.getElementById("BusSalonSlider");
-    var outputBusSalon = document.getElementById("BusSalonValue");
-    outputBusSalon.innerHTML = sliderBusSalon.value;
-
-    sliderBusSalon.oninput = function () {
-        outputBusSalon.innerHTML = this.value;       
-    }
-
-</script>

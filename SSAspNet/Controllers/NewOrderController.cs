@@ -15,8 +15,8 @@ namespace SSAspNet.Controllers
         public ActionResult SelectNewOrder(FormCollection coll)
         {
             string car = coll["Car"].ToString();
-            if (car == "PasCar")
-                return View("~/Views/NewOrder/NewOrderPasCar.cshtml");
+            if (car == "PasCar")                           
+                return View("~/Views/NewOrder/NewOrderPasCar.cshtml");                            
             else if (car == "Truck")
                 return View("~/Views/NewOrder/NewOrderTruck.cshtml");
             else if (car == "Bus")
@@ -27,7 +27,7 @@ namespace SSAspNet.Controllers
 
         [HttpPost]
         public ActionResult NewOrderPasCar(PasCarServiceStation car)
-        {
+        {            
             Order order = new Order();
             car.FillOrder(ref order);
             order.AddNewOrder();

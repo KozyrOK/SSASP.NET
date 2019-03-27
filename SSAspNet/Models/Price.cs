@@ -4,7 +4,7 @@ namespace SSAspNet.Model
 {
     public class Price : Pricelist, INotifyPropertyChanged
     {
-        
+
         public int? PriceId { get; set; }
 
         public Price() { }
@@ -12,7 +12,7 @@ namespace SSAspNet.Model
         public Price(int id)
         {
             using (SSAspNetContext priceContext = new SSAspNetContext())
-            {                
+            {
                 Price price = priceContext.Prices.Find(id);
                 if (price != null)
                 {
@@ -26,14 +26,14 @@ namespace SSAspNet.Model
                     BusUpholstery = price.BusUpholstery;
                     PasCarwheelBalancing = price.PasCarwheelBalancing;
                     TruckHydraulics = price.TruckHydraulics;
-                }                
+                }
             }
-        }       
+        }
 
         public void EditPrice()
         {
             using (SSAspNetContext priceContext = new SSAspNetContext())
-            {                
+            {
                 Price price = priceContext.Prices.Find(1);
                 if (price != null)
                 {
@@ -49,7 +49,7 @@ namespace SSAspNet.Model
                     price.TruckHydraulics = TruckHydraulics;
                     priceContext.SaveChanges();
                 }
-            }            
+            }
         }
     }
 }
