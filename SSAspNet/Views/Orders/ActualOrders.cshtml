@@ -6,32 +6,31 @@
 }
 
 <page class="Page">
-    <h2 align="center">Actual orders</h2>
-
-    <table class="tableSS">
-        <tr>
-            <th># order</th>
-            <th>Car number</th>
-            <th>Cost order</th>
-            <th>Order paid</th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+    <h2 align="center">Actual orders</h2>    
+        <table class="tableSS" border="1" align="center">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberCar)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CostOrder)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderPaid)
-                </td>
+                <th># order</th>
+                <th>Car number</th>
+                <th>Cost order</th>
+                <th>Order paid</th>
             </tr>
-        }
-    </table>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberCar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostOrder)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderPaid)
+                    </td>
+                </tr>
+             }
+        </table>
 </page>
