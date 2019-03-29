@@ -12,7 +12,7 @@ namespace SSAspNet
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "MainController", action = "MainMenu", id = UrlParameter.Optional }
+                defaults: new { controller = "Main", action = "MainMenu", id = UrlParameter.Optional }
             );
         }
     }
